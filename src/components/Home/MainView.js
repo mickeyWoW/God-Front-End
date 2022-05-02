@@ -1,6 +1,6 @@
-import ArticleList from '../ArticleList';
+import ArticleList from '../Article/ArticleList';
 import React from 'react';
-import agent from '../../agent';
+import agent from '../../utils/agent';
 import { connect } from 'react-redux';
 import { CHANGE_TAB } from '../../constants/actionTypes';
 

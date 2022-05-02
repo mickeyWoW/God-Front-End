@@ -1,17 +1,17 @@
-import agent from '../agent';
-import Header from './Header';
+import agent from '../utils/agent';
+import Header from './Shared/Header';
 import React from 'react';
 import { connect } from 'react-redux';
 import { APP_LOAD, REDIRECT } from '../constants/actionTypes';
 import { Route, Switch } from 'react-router-dom';
 import Article from '../components/Article';
-import Editor from '../components/Editor';
+import Editor from '../components/Article/Editor';
 import Home from '../components/Home';
-import Login from '../components/Login';
-import Profile from '../components/Profile';
-import ProfileFavorites from '../components/ProfileFavorites';
-import Register from '../components/Register';
-import Settings from '../components/Settings';
+import Login from '../components/Auth/Login';
+import Profile from '../components/User/Profile';
+import ProfileFavorites from '../components/User/ProfileFavorites';
+import Register from '../components/Auth/Register';
+import Settings from '../components/User/Settings';
 import { store } from '../store';
 import { push } from 'react-router-redux';
 

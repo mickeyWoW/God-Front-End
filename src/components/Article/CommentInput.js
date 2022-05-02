@@ -1,5 +1,5 @@
 import React from 'react';
-import agent from '../../agent';
+import agent from '../../utils/agent';
 import { connect } from 'react-redux';
 import { ADD_COMMENT } from '../../constants/actionTypes';
 
