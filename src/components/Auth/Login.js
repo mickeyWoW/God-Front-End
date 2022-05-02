@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import ListErrors from '../Components/ListErrors';
 import React from 'react';
 import agent from '../../utils/agent';
 import { connect } from 'react-redux';
@@ -52,8 +51,6 @@ class Login extends React.Component {
                   Need an account?
                 </Link>
               </p>
-
-              <ListErrors errors={this.props.errors} />
 
               <form onSubmit={this.submitForm(email, password)}>
                 <fieldset>

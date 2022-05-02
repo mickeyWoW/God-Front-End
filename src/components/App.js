@@ -4,14 +4,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { APP_LOAD, REDIRECT } from '../constants/actionTypes';
 import { Route, Switch } from 'react-router-dom';
-import Article from '../components/Article';
-import Editor from '../components/Article/Editor';
 import Home from '../components/Home';
 import Login from '../components/Auth/Login';
-import Profile from '../components/User/Profile';
-import ProfileFavorites from '../components/User/ProfileFavorites';
 import Register from '../components/Auth/Register';
-import Settings from '../components/User/Settings';
 import { store } from '../store';
 import { push } from 'react-router-redux';
 
@@ -59,12 +54,6 @@ class App extends React.Component {
             <Route exact path="/" component={Home}/>
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
-            <Route path="/editor/:slug" component={Editor} />
-            <Route path="/editor" component={Editor} />
-            <Route path="/article/:id" component={Article} />
-            <Route path="/settings" component={Settings} />
-            <Route path="/@:username/favorites" component={ProfileFavorites} />
-            <Route path="/@:username" component={Profile} />
             </Switch>
         </div>
       );
