@@ -2,7 +2,7 @@ import agent from '../utils/agent';
 import Header from './Shared/Header';
 import React from 'react';
 import { connect } from 'react-redux';
-import { APP_LOAD, REDIRECT } from '../constants/actionTypes';
+import { APP_LOAD } from '../constants/actionTypes';
 import { Route, Switch } from 'react-router-dom';
 import Home from '../components/Home';
 import Login from '../components/Auth/Login';
@@ -20,9 +20,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   onLoad: (payload, token) =>
-    dispatch({ type: APP_LOAD, payload, token, skipTracking: true }),
-  onRedirect: () =>
-    dispatch({ type: REDIRECT })
+    dispatch({ type: APP_LOAD, payload, token, skipTracking: true })
 });
 
 class App extends React.Component {
@@ -51,9 +49,9 @@ class App extends React.Component {
             appName={this.props.appName}
             currentUser={this.props.currentUser} />
             <Switch>
-            <Route exact path="/" component={Home}/>
-            <Route path="/login" component={Login} />
-            <Route path="/register" component={Register} />
+              <Route exact path="/" component={Home}/>
+              <Route path="/login" component={Login} />
+              <Route path="/register" component={Register} />
             </Switch>
         </div>
       );
