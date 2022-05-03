@@ -1,14 +1,18 @@
-import agent from '../utils/agent';
-import Header from './Shared/Header';
 import React from 'react';
 import { connect } from 'react-redux';
+import { push } from 'react-router-redux';
+
+import agent from '../utils/agent';
+import Header from './Shared/Header';
 import { APP_LOAD } from '../constants/actionTypes';
 import { Route, Switch } from 'react-router-dom';
 import Home from '../components/Home';
 import Login from '../components/Auth/Login';
 import Register from '../components/Auth/Register';
 import { store } from '../store';
-import { push } from 'react-router-redux';
+import LayoutDefault from './Layouts/LayoutDefault';
+import AppRoute from '../utils/AppRoute';
+import ScrollReveal from '../utils/ScrollReveal';
 
 const mapStateToProps = state => {
   return {
@@ -24,6 +28,12 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.childRef = React.createRef();
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.redirectTo) {
       // this.context.router.replace(nextProps.redirectTo);
@@ -41,27 +51,36 @@ class App extends React.Component {
     this.props.onLoad(token ? agent.Auth.current() : null, token);
   }
 
+  componentDidMount() {
+    this.childRef.current.init();
+  }
+
   render() {
     if (this.props.appLoaded) {
       return (
-        <div>
-          <Header
-            appName={this.props.appName}
-            currentUser={this.props.currentUser} />
-            <Switch>
-              <Route exact path="/" component={Home}/>
-              <Route path="/login" component={Login} />
-              <Route path="/register" component={Register} />
-            </Switch>
-        </div>
+        <ScrollReveal
+          ref={this.childRef}
+          children={() => (
+            <div>
+              <Switch>
+                <AppRoute exact path="/" component={Home} layout={LayoutDefault}/>
+                <AppRoute path="/login" component={Login} layout={LayoutDefault} />
+                <AppRoute path="/register" component={Register} layout={LayoutDefault} />
+              </Switch>
+            </div>
+          )} />
       );
     }
     return (
-      <div>
-        <Header
-          appName={this.props.appName}
-          currentUser={this.props.currentUser} />
-      </div>
+      <ScrollReveal
+        ref={this.childRef}
+        children={() => (
+          <div>
+            <Header
+              appName={this.props.appName}
+              currentUser={this.props.currentUser} />
+          </div>
+        )} />
     );
   }
 }

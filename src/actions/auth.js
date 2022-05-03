@@ -1,4 +1,4 @@
-import { requests } from '../../utils/agent';
+import { requests } from '../utils/agent';
 
 export default {
   login: (email, password) =>

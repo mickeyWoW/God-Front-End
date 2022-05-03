@@ -16,8 +16,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class Home extends React.Component {
-  componentWillMount() {
-  }
 
   componentWillUnmount() {
   }
@@ -30,6 +28,46 @@ class Home extends React.Component {
 
         <div className="container page">
           <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
           </div>
         </div>
 
