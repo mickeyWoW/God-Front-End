@@ -17,12 +17,17 @@ const mapDispatchToProps = dispatch => ({
 
 class Home extends React.Component {
 
+  componentDidMount() {
+    console.log('Home.js');
+  }
+
   componentWillUnmount() {
   }
 
   render() {
     return (
-      <div className="home-page">
+      <>
+      <section className="hero section center-content illustration-section-01">
 
         <Banner token={this.props.token} appName={this.props.appName} />
 
@@ -71,7 +76,108 @@ class Home extends React.Component {
           </div>
         </div>
 
-      </div>
+      </section>
+      <section className="section home-page">
+
+        <Banner token={this.props.token} appName={this.props.appName} />
+
+        <div className="container page">
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+        </div>
+
+      </section>
+      <section className="section home-page">
+
+        <Banner token={this.props.token} appName={this.props.appName} />
+
+        <div className="container page">
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+          <div className="row">
+            <img src='./image.png'></img>
+          </div>
+        </div>
+
+      </section>
+      </>
     );
   }
 }

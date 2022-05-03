@@ -43,6 +43,7 @@ const ScrollReveal = React.forwardRef((props, ref) => {
   }));  
 
   useEffect(() => {
+    
     if (typeof revealEl !== 'undefined' && revealEl.length > 0) {
       if (!checkComplete()) {
         window.addEventListener('scroll', handleScroll);

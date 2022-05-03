@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 
@@ -32,6 +32,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.childRef = React.createRef();
+
   }
 
   componentWillReceiveProps(nextProps) {
@@ -52,22 +53,25 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.childRef.current.init();
+    document.body.classList.add('is-loaded')
   }
 
+  componentDidUpdate() {
+    console.log('app');
+    this.childRef.current.init();
+  }
+  
   render() {
     if (this.props.appLoaded) {
       return (
         <ScrollReveal
           ref={this.childRef}
           children={() => (
-            <div>
-              <Switch>
-                <AppRoute exact path="/" component={Home} layout={LayoutDefault}/>
-                <AppRoute path="/login" component={Login} layout={LayoutDefault} />
-                <AppRoute path="/register" component={Register} layout={LayoutDefault} />
-              </Switch>
-            </div>
+            <Switch>
+              <AppRoute exact path="/" component={Home} layout={LayoutDefault}/>
+              <AppRoute path="/login" component={Login} layout={LayoutDefault} />
+              <AppRoute path="/register" component={Register} layout={LayoutDefault} />
+            </Switch>
           )} />
       );
     }
